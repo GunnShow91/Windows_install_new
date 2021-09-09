@@ -76,6 +76,9 @@ winget install Microsoft.WindowsTerminal | Out-Host
 Write-Host "Installing Microsoft PowerToys"
 winget install Microsoft.PowerToys | Out-Host
 
+Write-Host "Installing DropBox"
+winget install dropbox
+
 #Write-Host "Installing Sumatra PDF"
 #winget install SumatraPDF.SumatraPDF | Out-Host
 
@@ -435,8 +438,8 @@ Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundA
 }
 
 [void]$Form.ShowDialog()
-#choco install
+Write-Host "Installing Chocolaty"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-#install wsl
+Write-Host "Installing WSL"
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
